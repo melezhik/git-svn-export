@@ -11,4 +11,4 @@ find $local_dir -maxdepth 1 -mindepth 1 -type d -execdir perl -MFile::Basename \
 my $q = $ENV{q};
 print "let \"i++\"; echo -n \$i. \" \"; cd $ENV{local_dir}/$p && git init 2>/dev/null; git rm -r .; ",
 " svn export $svn_repo/$p -f . && git add .; git commit -a -m export-from-svn; echo \n"' {}  \; \
-#| bash && echo bitbucket-repo-done
+| bash && echo done
