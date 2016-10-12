@@ -13,12 +13,15 @@ Export (multiple) svn repositories into (multiple) git repositories.
     --param local_dir=/path/to/local/git/repositories/ \
     --param svn_repo=http://svn_repositories/private
 
-
 # Parameters
 
 ## local_dir
 
-This should be a local path to a directory containing a _local git repositories_
+This should be a local path to a directory containing a _local git repositories_. 
+
+If `local_dir` does not exist it will be created and initialized by empty directories get listed as:
+
+    svn list $svn_repo
 
 ## svn_repo
 
@@ -60,6 +63,12 @@ Only proceed a given project. Should be a name of sub directory inside `$local_d
 For example:
 
     --param project=baz
+
+## skip_init
+
+Set this parameter if you want to skip initialization stage, see `local_dir` parameter section.
+
+    --param skip_init=1
 
 # See also
 

@@ -1,21 +1,35 @@
 export local_dir=$(config local_dir)
 export svn_repo=$(config svn_repo)
 export project=$(config project)
+skip_init=$(config skip_init)
 
 echo svn_repo: $svn_repo
 echo local_dir: $local_dir
 
 echo
-echo
-echo
 
 test -d $local_dir || mkdir -p $local_dir
 
-echo 'updating project list from' $svn_repo ...
+if test -z $skip_init; then
 
-for i in $(svn list $svn_repo); do 
-  mkdir -p $local_dir/$i
-done
+  echo 'initialaze local_dir ... '
+
+  echo 'updating project list from svn_repo ...'
+
+  for i in $(svn list $svn_repo); do 
+    mkdir -p $local_dir/$i
+  done
+
+else
+
+  echo 'skip initialazation stage ...'
+  
+
+fi
+
+echo
+echo
+echo
 
 find $local_dir -maxdepth 1 -mindepth 1 -type d -execdir perl -MFile::Basename \
 -e '
