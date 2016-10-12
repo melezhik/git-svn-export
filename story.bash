@@ -29,8 +29,11 @@ if ($project){
     exit unless $project eq $p;
 }
 
-print "let \"i++\"; echo -n \$i. \" \"; mkdir $local_dir/$p && \\
+print "
+let \"i++\"; \\
+echo -n \$i. \" \";  \\
+mkdir -p $local_dir/$p && \\
 cd $local_dir/$p && git init; git rm -r ./ --ignore-unmatch -q && \\
 svn export $svn_repo/$p -q --force . \\
-&& git add ./; git commit -a -m export-from-svn ; \\
+&& git add ./ && git commit -a -m export-from-svn ; \\
 echo \n"' {}  \; | bash && echo done
