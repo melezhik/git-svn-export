@@ -43,16 +43,12 @@ if ($project){
     exit unless $project eq $p;
 }
 
-print "
-let \"i++\"; \\
-( \\
-sleep 5 ; \\
-echo -n \$i. \" \";  \\
-mkdir -p $local_dir/$p && \\
-cd $local_dir/$p && git init; git rm -r ./ --ignore-unmatch -q && \\
-svn export $svn_repo/$p -q --force . \\
-&& git add ./ && git commit -a -m export-from-svn ; ) & \\
-echo \n"' {}  \; | bash && echo done
+print "( \\
+export COLUMNS=80 && export LINES=24 && \\
+cd $local_dir && \\
+git svn clone $svn_repo/$p ; \\
+cd $local_dir/$p && git svn fetch && git svn rebase && \\
+echo ) & \n"' {}  \; | bash && echo done
 
 wait
 

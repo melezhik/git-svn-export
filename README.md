@@ -31,31 +31,6 @@ For example:
 
     --param svn_repo=http://svn_repositories/private
 
-Plugin goes through sub directories located at `$local_dir` and fetch svn data using `svn export` command:
-
-    svn export $svn_repo/$directory
-
-Where $directory is a name of local directory.
-
-* Before executing `svn export` command all local git data removed by executing `git rm -r .` command.
- 
-* When `svn export` command is done a `git add .` command executed and then all data committed into local git repository.
-
-As result we _emulate_ migration data from remote svn repository to local git repository.
-
-Local directory layout should be:
-
-    # local_dir:
-    /home/melezhik/repos/
-
-    # foo repository:
-    /home/melezhik/repos/foo/ ---> svn export $svn_repo/foo
-
-    # baz repository:
-    /home/melezhik/repos/baz/ --> svn export $svn_repo/baz
-
-    so on ...
-
 ## project
 
 Only proceed a given project. Should be a name of sub directory inside `$local_dir`
