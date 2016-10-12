@@ -53,6 +53,14 @@ Local directory layout should be:
 
     so on ...
 
+## project
+
+Only proceed a given project. Should be a name of sub directory inside `$local_dir`
+
+For example:
+
+    --param project=baz
+
 # See also
 
 [git-push-async](https://sparrowhub.org/info/git-async-push) - a plugin for asynchronous pushes to remote git repositories.
