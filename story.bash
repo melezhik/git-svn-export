@@ -52,3 +52,6 @@ cd $local_dir/$p && git init; git rm -r ./ --ignore-unmatch -q && \\
 svn export $svn_repo/$p -q --force . \\
 && git add ./ && git commit -a -m export-from-svn ; ) & \\
 echo \n"' {}  \; | bash && echo done
+
+wait
+
