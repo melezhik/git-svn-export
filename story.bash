@@ -48,7 +48,7 @@ export COLUMNS=80 && export LINES=24 && \\
 cd $local_dir && \\
 git svn clone $svn_repo/$p ; \\
 cd $local_dir/$p && git svn fetch && git svn rebase && \\
-echo ) & \n"' {}  \; | bash && echo done
+echo )  \n"' {}  \; | bash && echo done
 
 wait
 
