@@ -16,7 +16,7 @@ if test -z $skip_init; then
 
   echo 'updating project list from svn_repo ...'
 
-  for i in $(svn list $svn_repo); do 
+  for i in $(svn list $svn_repo| grep '/'); do 
     mkdir -p $local_dir/$i
   done
 
