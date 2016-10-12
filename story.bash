@@ -46,6 +46,7 @@ if ($project){
 print "
 let \"i++\"; \\
 ( \\
+sleep 5 ; \\
 echo -n \$i. \" \";  \\
 mkdir -p $local_dir/$p && \\
 cd $local_dir/$p && git init; git rm -r ./ --ignore-unmatch -q && \\
