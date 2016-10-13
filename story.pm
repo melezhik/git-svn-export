@@ -13,8 +13,9 @@ while (my $d = <$fh>){
 
   if ($project){
     next unless $project eq $p;
-    run_story( 'git-svn', { project =>  $p })
   }
+
+   run_story( 'git-svn', { project =>  $p })
 
 }
 
