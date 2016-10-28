@@ -8,4 +8,4 @@ p=$(story_var project)
 
 
 cd $local_dir && git svn clone -q $svn_repo/$p 
-cd $local_dir/$p && git svn fetch -q && git svn rebase -q
+cd $local_dir/$p && git svn fetch -q 1>/dev/null && git svn rebase -q 1>/dev/null
