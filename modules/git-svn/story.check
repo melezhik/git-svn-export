@@ -1,7 +1,1 @@
-generator: <<CODE
-!bash
-p=$(story_var project);
-echo  "$p updated" 
-CODE
-
 

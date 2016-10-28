@@ -7,5 +7,5 @@ svn_repo=$(config svn_repo)
 p=$(story_var project)
 
 
-cd $local_dir && git svn clone $svn_repo/$p 
-cd $local_dir/$p && git svn fetch && git svn rebase && echo $p updated 
+cd $local_dir && git svn clone -q $svn_repo/$p 
+cd $local_dir/$p && git svn fetch -q && git svn rebase -q

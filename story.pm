@@ -21,6 +21,4 @@ while (my $d = <$fh>){
 
 close $fh;
 
-set_stdout('done');
-
 
