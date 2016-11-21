@@ -47,7 +47,7 @@ Set this parameter if you want to skip initialization stage, see `local_dir` par
 
 # See also
 
-[git-push-async](https://sparrowhub.org/info/git-async-push) - a plugin for asynchronous pushes to remote git repositories.
+[git-async-push](https://sparrowhub.org/info/git-async-push) - a plugin for asynchronous pushes to remote git repositories.
 
 # Author
 
